@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Button, FlatList, Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 
 
 export default function Index() {
@@ -33,8 +33,10 @@ const renderItem=({item})=>{
 </View>)
 }
  const goToDetails = () => {
-   console.log('clicked');
     router.push('/details');
+  };
+   const goToProduct = () => {
+    router.push('/product');
   };
 
   return (
@@ -50,11 +52,15 @@ const renderItem=({item})=>{
       title='Go to Details'
       onPress={goToDetails}
       />
-<FlatList
+          <Button
+      title='Go to Product'
+      onPress={goToProduct}
+      />
+{/* <FlatList
 data={dataValue}
 keyExtractor={(item)=>item.id.toString()}
 renderItem={renderItem}
-/>
+/> */}
     </View>
   );
 }
